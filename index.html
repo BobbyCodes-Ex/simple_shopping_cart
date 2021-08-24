@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/application.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class ="row">
+        <div class ="col-xs-12">
+          <h1 class="my-4">Shopping Cart</h1>
+        </div>
+      </div>
+      <div class="row item">
+        <div class="col-xs-3 product">Eggs</div>
+        <div class="col-xs-3 price">3.00</div>
+        <div class ="col-xs-3 qty">QTY<input type="number" value="2"/></div>
+        <div class ="col-xs-1 delete"><button class="btn btn-light btn-sm remove">Delete</button></div>
+        <div class="col-xs-2 totalCost">$--.--</div>
+      </div>
+      <div class="row item">
+        <div class="col-xs-3 product">Bacon</div>
+        <div class="col-xs-3 price">8.00</div>
+        <div class ="col-xs-3 qty">QTY<input type="number" value="1"/></div>
+        <div class ="col-xs-1 delete"><button class="btn btn-light btn-sm remove">Delete</button></div>
+        <div class="col-xs-2 totalCost">$--.--</div>
+      </div>
+      <div class="row item">
+        <div class="col-xs-3 product">Milk</div>
+        <div class="col-xs-3 price">2.00</div>
+        <div class ="col-xs-3 qty">QTY<input type="number" value="1" /></div>
+        <div class ="col-xs-1 delete"><button class="btn btn-light btn-sm remove">Delete</button></div>
+        <div class="col-xs-2 totalCost">$--.--</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3 add_product"><input type="text" placeholder="Bread" /></div>
+        <div class="col-xs-3 add_price"><input type="number" placeholder="1" /></div>
+        <div class ="col-xs-6 add_row"><button class="btn btn-dark btn-sm add">Add</button></div>
+      </div>
+      <div class ="row" id="total">
+        <div class ="col-xs-12 d-flex flex-row">
+          <h1>Total Price:</h1>
+          <div id="totalPrice">$--.--</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

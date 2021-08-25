@@ -12,7 +12,7 @@ var totalCost = 0;
 
 var updateItemPrice = function (ele) {
     var priceOfItem = parseFloat($(ele).find('.price').text());
-    var quantityOfItem = parseFloat($(ele).find('.qty input').val());
+    var quantityOfItem = parseFloat($(ele).find('.howMany input').val());
     var totalCostOfItem = priceOfItem * quantityOfItem;
     $(ele).children('.totalCost').html('$' + totalCostOfItem);
     return totalCostOfItem
@@ -45,6 +45,11 @@ $(document).ready(function () {
         updateItemPrice();
         updateTotalPrice();
     });
+    $('.howMany').on('click', '.qty', function () {
+        updateItemPrice();
+        updateTotalPrice();
+      });
+      
     $('#addItem').on('submit', function (event) {
         event.preventDefault();
         var product = $('.addProduct').val();
@@ -53,7 +58,7 @@ $(document).ready(function () {
         $('#list').append('<div class="row item">' + 
         '<div class="col-xs-3 product">' + product + '</div>'
         + '<div class="col-xs-3 price">' + parseFloat(price).toFixed(2) + '</div>'
-        + '<div class ="col-xs-3 qty">' + 'QTY' + '<input type="number" value="1"/>' + '</div>'
+        + '<div class ="col-xs-3 howMany">' + 'QTY' + '<input class="qty" type="number" value="1"/>' + '</div>'
         + '<div class ="col-xs-1 delete">' + '<button class="btn btn-light btn-sm remove">' + 'Delete' + '</button>' + '</div>'
         + '<div class="col-xs-2 totalCost">' + '$--.--' + '</div>'
         + '</div>');
@@ -66,7 +71,11 @@ $(document).ready(function () {
             updateItemPrice();
             updateTotalPrice();
         });
-
+        $('.howMany').on('click', '.qty', function () {
+            updateItemPrice();
+            updateTotalPrice();
+          });
+          
         $('.addProduct').val('');
         $('.addPrice').val('');
     });

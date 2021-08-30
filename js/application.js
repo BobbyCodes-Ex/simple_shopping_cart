@@ -28,9 +28,9 @@ var updateTotalPrice = function () {
         var totalCostOfItem = updateItemPrice(ele);
         totalPrice.push(totalCostOfItem);
     });
-    var price = totalPrice.reduce(sum);
+    var price = totalPrice.reduce(sum, 0);
     $('#totalPrice').text('$' + price);
-
+    return totalPrice;
 }
   
 $(document).ready(function () {
@@ -49,7 +49,7 @@ $(document).ready(function () {
         updateItemPrice();
         updateTotalPrice();
       });
-      
+    
     $('#addItem').on('submit', function (event) {
         event.preventDefault();
         var product = $('.addProduct').val();
@@ -79,4 +79,6 @@ $(document).ready(function () {
         $('.addProduct').val('');
         $('.addPrice').val('');
     });
+    
   });
+ 
